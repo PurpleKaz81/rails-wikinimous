@@ -8,8 +8,8 @@
 
 10.times do
   article = Article.new(
-    title: Faker::Lorem.sentence,
-    content: Faker::Lorem.paragraph
+    title: Faker::DcComics.title,
+    content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4)
   )
   article.save!
 end
