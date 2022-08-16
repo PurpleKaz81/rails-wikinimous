@@ -1,8 +1,11 @@
+<%= link_to "My Articles", articles_path %>
+<%= link_to "New Article", new_article_path %>
+
 <h1>My Articles</h1>
 
-<ul>
+<ul style="list-style: none">
   <% @articles.each do |article| %>
-    <li><%= link_to article.title, article_path(article) %></li>
+    <li><%= link_to article.title, article_path(article)%> <%= link_to '✏', edit_article_path(article) %> <%= link_to '🗑', article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?!"} %> </li>
     <p><%= article.content %></p>
   <% end %>
 </ul>

@@ -3,9 +3,5 @@
   <%= f.text_field :title %>
   <%= f.label :content %>
   <%= f.text_field :content %>
-  <% unless @article.new_record? %>
-    <%= f.label :completed %>
-    <%= f.check_box :completed %>
-  <% end %>
   <%= f.submit %>
 <% end %>
